@@ -1,5 +1,5 @@
 name: HakoniwaKillStreakExtension
 main: net.th_hakoniwa.HakoniwaKillStreakExtension.HakoniwaKillStreakExtension
-author: Kyan, shion5116
-version: 0.0.1-SNAPSHOT
+author: Kyan
+version: 0.0.2-SNAPSHOT
 prefix: [HKS]

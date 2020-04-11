@@ -1,6 +1,5 @@
 package net.th_hakoniwa.HakoniwaKillStreakExtension.Listener;
 
-import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -8,8 +7,8 @@ import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 
-import net.th_hakoniwa.HakoniwaKillStreakExtension.KSConfigManager;
 import net.th_hakoniwa.HakoniwaKillStreakExtension.KSDataManager;
+import net.th_hakoniwa.HakoniwaKillStreakExtension.KSRewardDirector;
 
 public class KillStreakListener implements Listener {
 	@EventHandler
@@ -45,11 +44,8 @@ public class KillStreakListener implements Listener {
 			//メッセージで通知
 			killer.sendMessage("[§cHKS§f] 現在のキルストリークは" + count + "です。");
 
-
-			//config取得
-			YamlConfiguration conf = KSConfigManager.getInstance().getConfig();
-			//TODO ここから各種報酬等実装
-
+			//報酬配布
+			KSRewardDirector.getInstance().checkReward(killer, count);
 		}
 	}
 }

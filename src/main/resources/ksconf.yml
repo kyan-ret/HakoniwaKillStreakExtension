@@ -1,0 +1,36 @@
+# Replace
+# %player% : target player
+# %streak% : streak count
+Reward:
+  #指定回数目に一度だけ実行
+  Once:
+    '10':
+      Broadcast:
+      - "[&cHKS&f] %player%が10連キルを達成しました！"
+      Message:
+      - "&7連続キル報酬を獲得しました (10キル目)"
+      Item:
+        NETHER_STAR: 10
+  #指定回数ごとに繰り返し実行
+  Repeat:
+    #1にすると毎回配る
+    '1':
+      Message:
+      - "&7キル報酬を獲得しました"
+      Item:
+        COAL: 7
+      #コンソールコマンド
+      #Command:
+      #- ""
+    '2':
+      Message:
+      - "&7連続キル報酬を獲得しました (2キル毎)"
+      Item:
+        NETHER_STAR: 2
+    '5':
+      Broadcast:
+      - "[&cHKS&f] %player%が%streak%連キルを達成しました！"
+      Message:
+      - "&7連続キル報酬を獲得しました (5キル毎)"
+      Item:
+        COAL: 10

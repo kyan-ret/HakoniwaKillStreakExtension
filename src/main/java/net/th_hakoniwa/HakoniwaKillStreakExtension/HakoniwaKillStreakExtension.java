@@ -19,6 +19,10 @@ public class HakoniwaKillStreakExtension extends HakoniwaExtension {
 		plugin = getPlugin();
 		//データフォルダ取得
 		dataFolder = getDataFolder();
+		//報酬データ読み込み
+		KSRewardDirector.getInstance().initialize();
+		//キルストデータ初期化
+		KSDataManager.getInstance().initialize();
 		//イベントリスナーを登録
 		getPlugin().getServer().getPluginManager().registerEvents(new KillStreakListener(), getPlugin());
 

@@ -19,7 +19,7 @@ public class KSDataManager {
 	private static KSDataManager instance = null;
 
 	//KillStreak count
-	private Map<Player, Integer> killStreakCount = new HashMap<>();
+	private Map<Player, Integer> killStreakCount;
 
 
 	private KSDataManager() {}
@@ -32,6 +32,10 @@ public class KSDataManager {
 			instance = new KSDataManager();
 		}
 		return instance;
+	}
+
+	public void initialize() {
+		killStreakCount = new HashMap<>();
 	}
 
 
